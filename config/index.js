@@ -1,22 +1,27 @@
+const { env } = process
 const dotenv = require('dotenv')
 
-if (process.env.npm_lifecycle_event.startsWith('dev') ||
-process.env.npm_lifecycle_event.startsWith('test') ||
-process.env.npm_lifecycle_event.startsWith('sequelize')) {
-  dotenv.config({ silent: true })
+const DOTENV_ENVS = ['dev', 'test', 'sequelize']
+
+const loadDotEnv = (allowed, current) => {
+  if (allowed.some(e => current.startsWith(e))) {
+    dotenv.config({ silent: true })
+  }
 }
+
+loadDotEnv(DOTENV_ENVS, env.npm_lifecycle_event)
 
 module.exports = {
   api: {
-    env: process.env.NODE_ENV,
-    port: process.env.API_PORT,
-    logLevel: process.env.LOG_LEVEL
+    env: env.NODE_ENV,
+    port: env.API_PORT,
+    logLevel: env.LOG_LEVEL
   },
   database: {
-    dialect: process.env.DB_DIALECT,
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    dialect: env.DB_DIALECT,
+    host: env.DB_HOST,
+    user: env.DB_USER,
+    password: env.DB_PASSWORD,
     storage: ':memory:'
   }
 }
