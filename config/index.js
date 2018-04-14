@@ -1,4 +1,5 @@
 const { env } = process
+const path = require('path')
 const dotenv = require('dotenv')
 
 const DOTENV_ENVS = ['dev', 'test', 'sequelize']
@@ -20,8 +21,9 @@ module.exports = {
   database: {
     dialect: env.DB_DIALECT,
     host: env.DB_HOST,
-    user: env.DB_USER,
+    database: env.DB_DATABASE,
+    username: env.DB_USER,
     password: env.DB_PASSWORD,
-    storage: ':memory:'
+    storage: path.join(__dirname, '..', 'db', 'db.sqlite')
   }
 }

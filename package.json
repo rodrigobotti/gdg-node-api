@@ -5,8 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "npm run sequelize:migrate; nodemon --inspect server/index.js",
-    "sequelize:migrate": "./node_modules/.bin/sequelize db:migrate --env database",
+    "dev": "touch db/db.sqlite && npm run sequelize:migrate && npm run sequelize:seed && nodemon --inspect server/index.js",
+    "sequelize:migrate": "sequelize db:migrate --env database",
+    "sequelize:seed": "sequelize db:seed:all --env database",
     "lint": "eslint ./app ./server ./config --ext .json --ext .js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,6 +40,8 @@
     "koa-router": "^7.4.0",
     "moment": "^2.22.0",
     "moment-timezone": "^0.5.14",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
     "ramda": "^0.25.0",
     "require-all": "^2.2.0",
     "rootpath": "^0.1.2",

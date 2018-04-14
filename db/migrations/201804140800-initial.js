@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      password: {
+      hash: {
         type: Sequelize.STRING(128),
         allowNull: false
       },
@@ -27,17 +27,14 @@ module.exports = {
         type: Sequelize.STRING(16),
         allowNull: false
       },
+      role: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+      },
       created_at: Sequelize.DATE,
       updated_at: Sequelize.DATE
     }
-    const options = {
-      timestamps: true,
-      paranoid: false,
-      underscored: true,
-      freezeTableName: true
-    }
-
-    return queryInterface.createTable('user', schema, options)
+    return queryInterface.createTable('user', schema)
       .then(() => queryInterface.addIndex('user', ['email'], { indexName: 'user_email_unique', indicesType: 'UNIQUE' }))
   },
   down: (queryInterface, Sequelize) => queryInterface.removeIndex('user', 'user_email_unique')

@@ -36,8 +36,8 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# Environment
-.env
+# Environment --> for teching purposes it will be commited
+# .env
 
 # NYC
 lcov.info
@@ -57,3 +57,6 @@ out
 
 # editor
 .vscode
+
+# SQLITE
+**/*.sqlite
