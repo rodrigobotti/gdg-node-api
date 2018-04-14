@@ -1,12 +1,11 @@
-const winston = require('winston')
-const config = require('../../config')
+const Bristol = require('bristol').Bristol
+const palin = require('palin')
+const { api: config } = require('../../config')
 
-const logger = winston.createLogger({
-  level: config.api.logLevel,
-  format: winston.format.simple(),
-  transports: [
-    new winston.transports.Console()
-  ]
-})
+const logger = new Bristol()
+
+logger.addTarget('console')
+  .withLowestSeverity(config.logLevel)
+  .withFormatter(palin)
 
 module.exports = logger
