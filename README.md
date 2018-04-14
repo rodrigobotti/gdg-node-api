@@ -37,7 +37,9 @@ Here's a list of technologies and dependencies
 |   |           # configuration is being managed by environment variables and exposed by the config object
 |   |           # for dev environment `dotenv` is being used to simulate environment variables
 |   |
-|  /db   
+|  /db
+|   |- /migrations # database migration scripts using the sequelize DSL
+|   |
 |   |- db.sqlite # non-versioned (git) sqlite database: so attendees won't have to spin up a rdbms instance
 |   |
 |  /app
