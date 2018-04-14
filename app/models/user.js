@@ -19,7 +19,7 @@ const schema = {
     type: Sequelize.STRING,
     allowNull: false
   },
-  password: {
+  hash: {
     type: Sequelize.STRING,
     allowNull: false
   },
