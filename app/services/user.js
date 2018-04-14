@@ -24,9 +24,13 @@ const updateWithId = (id, { password, ...infos }) => User.findById(id)
 
 const removeWithId = id => User.destroy({ where: { id } }).then(() => ({ id }))
 
+const findUserByEmail = email => User.findOne({ where: { email } })
+
 module.exports = {
   listAll,
   removeWithId,
   create,
-  updateWithId
+  updateWithId,
+  findUserByEmail,
+  displayableUser
 }

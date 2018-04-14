@@ -12,8 +12,11 @@ const hashAndSalt = value => {
   return { salt, hash }
 }
 
+const compare = (a, b) => crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b))
+
 module.exports = {
   createSalt,
   sha512,
-  hashAndSalt
+  hashAndSalt,
+  compare
 }

@@ -18,6 +18,10 @@ module.exports = {
     port: env.API_PORT,
     logLevel: env.LOG_LEVEL
   },
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    expiration: process.env.JWT_EXPIRATION
+  },
   database: {
     dialect: env.DB_DIALECT,
     host: env.DB_HOST,

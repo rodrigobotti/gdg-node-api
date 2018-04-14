@@ -1,8 +1,10 @@
 const logger = require('../utils/logger')
+const { response, catalogue } = require('../utils/error')
 
 module.exports = (ctx, next) => next()
   .catch(error => {
     logger.error(error)
-    ctx.status = 500
-    ctx.body = { error: error.message }
+    const message = response[error.code] || response[catalogue.INTERNAL]
+    ctx.status = message.status
+    ctx.body = message.body
   })
