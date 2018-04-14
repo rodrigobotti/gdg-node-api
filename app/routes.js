@@ -5,6 +5,8 @@ const validator = require('koa-async-validator')
 const logger = require('./middlewares/logger')
 const error = require('./middlewares/error')
 const authenticated = require('./middlewares/auth')
+const validate = require('./middlewares/validate')
+const schemas = require('./utils/schemas')
 
 // handlers section
 const hello = require('./handlers/hello')
@@ -20,10 +22,10 @@ router.use(validator())
 router.get('/hello/:name', hello.sayHello)
 
 router.get('/users', authenticated, user.list)
-router.post('/users', authenticated, user.create)
-router.put('/users/:id', authenticated, user.update)
-router.del('/users/:id', authenticated, user.remove)
+router.post('/users', authenticated, validate(schemas.userCreate), user.create)
+router.put('/users/:id', authenticated, validate(schemas.userUpdate), user.update)
+router.del('/users/:id', authenticated, validate(schemas.userRemove), user.remove)
 
-router.post('/login', auth.authenticate)
+router.post('/login', validate(schemas.authenticate), auth.authenticate)
 
 module.exports = router
