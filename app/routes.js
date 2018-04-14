@@ -7,6 +7,7 @@ const error = require('./middlewares/error')
 
 // handlers section
 const hello = require('./handlers/hello')
+const user = require('./handlers/user')
 
 const router = new Router()
 
@@ -15,5 +16,9 @@ router.use(error)
 router.use(validator())
 
 router.get('/hello/:name', hello.sayHello)
+router.get('/users', user.list)
+router.post('/users', user.create)
+router.put('/users/:id', user.update)
+router.del('/users/:id', user.remove)
 
 module.exports = router

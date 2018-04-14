@@ -3,7 +3,7 @@ const config = require('../../config')
 
 const logger = winston.createLogger({
   level: config.api.logLevel,
-  format: winston.format.json(),
+  format: winston.format.simple(),
   transports: [
     new winston.transports.Console()
   ]
