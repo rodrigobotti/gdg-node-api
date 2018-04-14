@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "dad8af7f-0071-4925-a024-46b2689ffbc5",
+		"name": "gdg-node-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnZGctY2FtcGluYXMub3JnIiwiZmlyc3RfbmFtZSI6IkFkbWluIiwibGFzdF9uYW1lIjoiQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE1MjM2OTY0NzYsImV4cCI6MTUyMzc4Mjg3Nn0.gx_nPMNsWPn3uqK1vNUPJu6J912Lm5JFYKBodgMkdD0"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnZGctY2FtcGluYXMub3JnIiwiZmlyc3RfbmFtZSI6IkFkbWluIiwibGFzdF9uYW1lIjoiQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE1MjM2OTY0NzYsImV4cCI6MTUyMzc4Mjg3Nn0.gx_nPMNsWPn3uqK1vNUPJu6J912Lm5JFYKBodgMkdD0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"x@x.com\",\n    \"first_name\": \"Admin\",\n    \"last_name\": \"Admin\",\n    \"role\": \"ADMIN\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnZGctY2FtcGluYXMub3JnIiwiZmlyc3RfbmFtZSI6IkFkbWluIiwibGFzdF9uYW1lIjoiQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE1MjM2OTY0NzYsImV4cCI6MTUyMzc4Mjg3Nn0.gx_nPMNsWPn3uqK1vNUPJu6J912Lm5JFYKBodgMkdD0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"x@y.com\",\n    \"first_name\": \"Admin\",\n    \"last_name\": \"Admin\",\n    \"role\": \"ADMIN\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnZGctY2FtcGluYXMub3JnIiwiZmlyc3RfbmFtZSI6IkFkbWluIiwibGFzdF9uYW1lIjoiQWRtaW4iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE1MjM2OTY0NzYsImV4cCI6MTUyMzc4Mjg3Nn0.gx_nPMNsWPn3uqK1vNUPJu6J912Lm5JFYKBodgMkdD0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"admin@gdg-campinas.org\",\n\t\"password\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
