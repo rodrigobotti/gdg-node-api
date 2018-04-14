@@ -1,0 +1,69 @@
+{
+  "name": "gdg-node-api",
+  "version": "1.0.0",
+  "description": "Simple REST api - User CRUD",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "npm run sequelize:migrate; nodemon --inspect server/index.js",
+    "sequelize:migrate": "./node_modules/.bin/sequelize db:migrate --env database",
+    "lint": "eslint ./app ./server ./config --ext .json --ext .js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigobotti/gdg-node-api.git"
+  },
+  "keywords": [
+    "node",
+    "rest",
+    "microservice",
+    "api",
+    "gdg"
+  ],
+  "author": "rodrigo.botti@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigobotti/gdg-node-api/issues"
+  },
+  "homepage": "https://github.com/rodrigobotti/gdg-node-api#readme",
+  "dependencies": {
+    "jsonwebtoken": "^8.2.1",
+    "koa": "^2.5.0",
+    "koa-async-validator": "^0.1.2",
+    "koa-body": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-cors": "0.0.16",
+    "koa-jwt": "^3.3.1",
+    "koa-router": "^7.4.0",
+    "moment": "^2.22.0",
+    "moment-timezone": "^0.5.14",
+    "ramda": "^0.25.0",
+    "require-all": "^2.2.0",
+    "rootpath": "^0.1.2",
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0",
+    "sqlite3": "^4.0.0",
+    "winston": "^3.0.0-rc4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.4",
+    "mocha": "^5.1.0",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.6.0",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
+    "supertest": "^3.0.0"
+  }
+}
