@@ -124,6 +124,8 @@ The repo was prepared with branches in specific states:
 The speaker (in this case, myself) will guide the attendees through each major step (cheating by checking out to the branches in the convenient states mentioned above) explaining what is being done and how it is being achieved.
 
 ## Main topics
+These are the main topics this workshop proposes to address
+
 - node principles introduction
   - single threaded
   - non-blocking I/O
@@ -133,13 +135,18 @@ The speaker (in this case, myself) will guide the attendees through each major s
 - using [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) chains for dealing with asynchronicity
 
 ## Not discussed
-- functional programming in-depth
+Things that this workshop does not proposes to address
+
 - [clustering](https://nodejs.org/api/cluster.html#cluster_cluster)
 - [streams](https://nodejs.org/api/stream.html)
+- functional programming in-depth
 - reactive programming
 - effective config management
 
 ## "Not the best" for convenience
+Some things were implemented kinda sloppy.
+Here's a list of some of them (I'm sure you can probably find more) and the justifications behind them.
+
 - logger logs only to console
 - .env is versioned to help attendees have a proper (not ideal though) working environment
 - sqlite instead of a more production-ready rdbms for the same reason
@@ -149,6 +156,8 @@ The speaker (in this case, myself) will guide the attendees through each major s
   - if you need a more robust mean of doing it try [node_acl](https://github.com/OptimalBits/node_acl)
 
 ## Future
+- [ ] Talk about and implement clustering
+
 - [ ] Implement unit and integration tests
   - [ ] code coverage report
   - [ ] code coverage of 100%
@@ -157,3 +166,8 @@ The speaker (in this case, myself) will guide the attendees through each major s
   - [ ] nginx reverse proxy serving over https
   - [ ] database running in container
   - [ ] multiple api containers
+
+## Thanks
+Thank you [GDG Campinas](https://www.facebook.com/gdgcampinas/) for the opportunity to share some of my knowledge and believing this workshop was something that was worth sharing with the community.
+
+And thank you! Yes you, the one reading right now. This would not be possible if it weren't for your interest and dedication in the subject matter. You rock!
