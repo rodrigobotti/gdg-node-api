@@ -160,6 +160,12 @@ Here's a list of some of them (I'm sure you can probably find more) and the just
 ## Future
 - [ ] Talk about and implement clustering
 
+- [ ] Documentation
+  - [ ] Add JSDoc
+  - [ ] Api Documentation (swagger, openapi, apiblueprint, etc)
+   - [ ] Doc file
+   - [ ] UI Preview
+   
 - [ ] Implement unit and integration tests
   - [ ] code coverage report
   - [ ] code coverage of 100%
