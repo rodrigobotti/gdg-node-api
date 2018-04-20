@@ -161,7 +161,7 @@ Here's a list of some of them (I'm sure you can probably find more) and the just
 - [ ] Talk about and implement clustering
 
 - [ ] Documentation
-  - [ ] Add JSDoc
+  - [x] Add JSDoc
   - [ ] Api Documentation (swagger, openapi, apiblueprint, etc)
    - [ ] Doc file
    - [ ] UI Preview

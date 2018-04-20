@@ -1,15 +1,33 @@
+/**
+ * Error code catalogue
+ *
+ * @module utils/error
+ * @name catalogue
+ */
 const catalogue = {
   UNAUTHENTICATED: 'UNAUTHENTICATED',
+  INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',
   FORBIDDEN: 'FORBIDDEN',
   INVALID_REQUEST: 'INVALID_REQUEST',
   NOT_FOUND: 'NOT_FOUND',
   INTERNAL: 'INTERNAL'
 }
 
+/**
+ * Error code-to-response map.
+ * Maps an error code to an http response.
+ *
+ * @module utils/error
+ * @name response
+ */
 const response = {
   [catalogue.UNAUTHENTICATED]: {
     status: 401,
     body: { message: 'User not authenticated' }
+  },
+  [catalogue.INVALID_CREDENTIALS]: {
+    status: 401,
+    body: { message: 'Invalid credentials' }
   },
   [catalogue.FORBIDDEN]: {
     status: 403,
@@ -29,7 +47,20 @@ const response = {
   }
 }
 
+/**
+ * Custom error class representing a managed error i.e. the result of capturing a runtime error and handling it.
+ *
+ * @module utils/error
+ * @name ManagedError
+ * @class
+ */
 class ManagedError extends Error {
+  /**
+   * @constructor
+   * @param {string} code error code
+   * @param {string} message error message
+   * @see {@link utils/error:catalogue}
+   */
   constructor (code, message = '') {
     super(message || code)
     this._code = code

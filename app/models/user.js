@@ -40,4 +40,11 @@ const options = {
   freezeTableName: true
 }
 
+/**
+ * Configured User model.
+ *
+ * @see Sequelize.Model
+ * @module models/user
+ * @name User
+ */
 module.exports = sequelize.define('User', schema, options)
