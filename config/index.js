@@ -16,7 +16,8 @@ module.exports = {
   api: {
     env: env.NODE_ENV,
     port: env.API_PORT,
-    logLevel: env.LOG_LEVEL
+    logLevel: env.LOG_LEVEL,
+    clustering: env.CLUSTER_ENABLED === 'true'
   },
   jwt: {
     secret: process.env.JWT_SECRET,

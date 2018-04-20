@@ -158,7 +158,7 @@ Here's a list of some of them (I'm sure you can probably find more) and the just
   - if you need a more robust mean of doing it try [node_acl](https://github.com/OptimalBits/node_acl)
 
 ## Future
-- [ ] Talk about and implement clustering
+- [x] Talk about and implement clustering
 
 - [ ] Documentation
   - [x] Add JSDoc
