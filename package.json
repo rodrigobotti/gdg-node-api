@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "touch db/db.sqlite && npm run sequelize:migrate && nodemon --inspect server/index.js",
+    "dev": "npm run dev:db && nodemon --inspect server/index.js",
+    "dev:db": "touch db/db.sqlite && sequelize db:migrate --env database && sequelize db:seed --env database",
     "sequelize:migrate": "sequelize db:migrate --env database",
     "sequelize:seed": "sequelize db:seed:all --env database",
     "lint": "eslint ./app ./server ./config --ext .json --ext .js",
