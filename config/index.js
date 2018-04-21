@@ -2,7 +2,7 @@ const { env } = process
 const path = require('path')
 const dotenv = require('dotenv')
 
-const DOTENV_ENVS = ['dev', 'test', 'sequelize']
+const DOTENV_ENVS = ['dev', 'test']
 
 const loadDotEnv = (allowed, current) => {
   if (allowed.some(e => current.startsWith(e))) {
